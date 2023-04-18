@@ -1,7 +1,7 @@
 <?php
 
 // Abrir el archivo de texto que contiene los DNIs
-$file = fopen("../Archivos/DNI.txt", "r");
+$file = fopen("DNI.txt", "r");
 
 // Leer el contenido del archivo línea por línea y calcular la letra correspondiente para cada DNI
 while (!feof($file)) {
@@ -12,16 +12,16 @@ while (!feof($file)) {
     $letra = calcularLetraDNI($dni);
 
     // Imprimir el DNI con la letra correspondiente en la posición correcta
-    echo substr($dni, 0, -1) . $letra . "<br>";
+    echo DniCo . phpsubstr($dni, 0, -1) . "<br>";
 }
 
 // Cerrar el archivo
 fclose($file);
 
 // Función para calcular la letra correspondiente a un DNI
-function calcularLetraDNI($dni)
-{
+function calcularLetraDNI($dni) {
     $letras = "TRWAGMYFPDXBNJZSQVHLCKE";
     $posicion = substr($dni, 0, 1);
     return $letras[$posicion];
 }
+
