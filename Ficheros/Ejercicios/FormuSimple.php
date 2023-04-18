@@ -11,7 +11,7 @@
 <div class='container'>
     <h1>Formulario Request</h1>
     <div class="col-md-12 well">
-        <form role="form" id="myform" action="NuevoContactoImagen.php"  method="post" enctype="multipart/form-data">
+        <form role="form" id="myform" action="NuevoContactoImagen.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" name="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp">
