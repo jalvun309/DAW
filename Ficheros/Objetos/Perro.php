@@ -94,7 +94,7 @@ class Perro {
         return $estado;
     }
 }
-
+/*
 $perro = new Perro('Labrador', 'Negro', 3);
 
 // Probamos las funciones del objeto
@@ -109,16 +109,17 @@ echo "\n\n";
 
 // Mostramos el estado del perro
 echo $perro->getEstado();
-
+*/
+$perro = new Perro('Labrador', 'Negro', 3);
 $salir=0;
 while ($salir==0){
-    echo "Bienvenido al menu de tu perro, esta son las acciones que puedes tener con tu perro";
-    echo "1.Acariciar.";
-    echo "2.Darle de comer.";
-    echo "3.Sacar al perro a pasear.";
-    echo "4.Revisar carnet canino.";
-    echo "5.Desaparecer";
-    echo "\n¿Que quieres hacer? Responde según los numeros de las opciones.";
+    echo "Bienvenido al menu de tu perro, esta son las acciones que puedes tener con tu perro"."\n";
+    echo "1.Acariciar."."\n";
+    echo "2.Darle de comer."."\n";
+    echo "3.Sacar al perro a pasear."."\n";
+    echo "4.Revisar carnet canino."."\n";
+    echo "5.Desaparecer"."\n";
+    echo "\n¿Que quieres hacer? Responde según los numeros de las opciones."."\n";
     $respuesta= trim(fgets(STDIN));
 
     switch ($respuesta) {
