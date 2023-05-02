@@ -66,7 +66,7 @@ function MatrizDiagonal($matriz){
     if(MatrizCuadrada($matriz)){
         for($i=0;$i<count($matriz);$i++){
             if($matriz[$i][$i]==1){
-                ;
+                return 0;
             }
         }
         return 1;
@@ -138,3 +138,66 @@ function esMatrizTriangular($matriz){
     return true;
 }
 
+function SumarMatriz($matriz1,$matriz2){
+    // Obtenemos las dimensiones de la matriz
+    $filas = count($matriz1);
+    $columnas = count($matriz1[0]);
+
+    $matrizResultado = array();
+
+    for ($i = 0; $i < $filas; $i++) {
+        for ($j = 0; $j < $columnas; $j++) {
+            $matrizResultado[$i][$j] = $matriz1[$i][$j] + $matriz2[$i][$j];
+        }
+    }
+
+// Imprimimos la matriz resultado
+    echo "Matriz Resultado: <br>";
+    for ($i = 0; $i < $filas; $i++) {
+        for ($j = 0; $j < $columnas; $j++) {
+            echo $matrizResultado[$i][$j] . " ";
+        }
+        echo "<br>";
+    }
+}
+
+
+function MultiplicarMatriz($matriz1,$matriz2){
+    // Obtenemos las dimensiones de las matrices
+    $filasMatriz1 = count($matriz1);
+    $columnasMatriz1 = count($matriz1[0]);
+    $filasMatriz2 = count($matriz2);
+    $columnasMatriz2 = count($matriz2[0]);
+
+// Verificamos si se pueden multiplicar las matrices
+    if ($columnasMatriz1 != $filasMatriz2) {
+        echo "Las matrices no se pueden multiplicar";
+        exit();
+    }
+
+// Inicializamos la matriz resultado
+    $matrizResultado = array();
+    for ($i = 0; $i < $filasMatriz1; $i++) {
+        for ($j = 0; $j < $columnasMatriz2; $j++) {
+            $matrizResultado[$i][$j] = 0;
+        }
+    }
+
+// Multiplicamos las matrices
+    for ($i = 0; $i < $filasMatriz1; $i++) {
+        for ($j = 0; $j < $columnasMatriz2; $j++) {
+            for ($k = 0; $k < $columnasMatriz1; $k++) {
+                $matrizResultado[$i][$j] += $matriz1[$i][$k] * $matriz2[$k][$j];
+            }
+        }
+    }
+
+// Imprimimos la matriz resultado
+    echo "Matriz Resultado: <br>";
+    for ($i = 0; $i < $filasMatriz1; $i++) {
+        for ($j = 0; $j < $columnasMatriz2; $j++) {
+            echo $matrizResultado[$i][$j] . " ";
+        }
+        echo "<br>";
+    }
+}
